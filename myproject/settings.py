@@ -85,7 +85,7 @@ DATABASES = {
          'NAME': 'azuretestwebserver',
          'USER': 'axperez',
          'PASSWORD': 'aperez1@scu.edu',
-         'HOST': 'azuretestwebserver',
+         'HOST': 'azuretestwebserver.mysql.database.azure.com',
          'PORT': '3306',
          'OPTIONS': {
              'driver': 'ODBC Driver 13 for SQL Server',
