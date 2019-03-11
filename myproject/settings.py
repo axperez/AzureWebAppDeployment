@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
      'default': {
          'ENGINE': 'sql_server.pyodbc',
-         'NAME': 'azuretestwebserver',
+         'NAME': 'azuretestdb',
          'USER': 'axperez',
          'PASSWORD': 'aperez1@scu.edu',
-         'HOST': 'azuretestwebserver.mysql.database.azure.com',
-         'PORT': '3306',
+         'HOST': 'azuretestwebserver.database.windows.net',
+         'PORT': '1433',
          'OPTIONS': {
              'driver': 'ODBC Driver 13 for SQL Server',
              'MARS_Connection': 'True',
