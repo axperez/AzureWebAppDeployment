@@ -88,8 +88,8 @@ DATABASES = {
          'HOST': 'azuretestwebserver.database.windows.net',
          'PORT': '1433',
          'OPTIONS': {
-             'driver': 'ODBC Driver 13 for SQL Server',
-             'MARS_ConnecSQL Server Native Client 11.0tion': 'True',
+             'driver': 'SQL Server Native Client 11.0',
+             'MARS_Connection': 'True',
          }
      }
  }
