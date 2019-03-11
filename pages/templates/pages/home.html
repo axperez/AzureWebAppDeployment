@@ -1,0 +1,12 @@
+<h1>PaaS Probers Web App</h1>
+<p>This web app allows the client to upload data to the server.</p>
+<p>The server is hosted on a cloud platform (PaaS).</p>
+<!-- <p>First object added: {{ object.data }}</p> -->
+
+<!-- <textarea rows="25" cols="25">Enter data to save in the database!</textarea>
+<button type="button">Save Data</button> -->
+
+<form method="POST"> {% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" name="Save">
+</form>
