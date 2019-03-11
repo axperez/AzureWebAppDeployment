@@ -89,7 +89,7 @@ DATABASES = {
          'PORT': '1433',
          'OPTIONS': {
              'driver': 'ODBC Driver 13 for SQL Server',
-             'MARS_Connection': 'True',
+             'MARS_ConnecSQL Server Native Client 11.0tion': 'True',
          }
      }
  }
