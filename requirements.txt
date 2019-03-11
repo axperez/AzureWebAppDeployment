@@ -1,7 +1,6 @@
 Django==2.1.7
 django-pyodbc-azure==2.1.0.0
 Pillow==5.4.1
-pyodbc==4.0.26
 pytesseract==0.2.6
 pytz==2018.9
 virtualenv==16.0.0
