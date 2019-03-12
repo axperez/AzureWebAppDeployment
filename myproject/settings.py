@@ -81,15 +81,14 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
      'default': {
-         'ENGINE': 'sql_server.pyodbc',
-         'NAME': 'azuretestdb',
-         'USER': 'axperez',
-         'PASSWORD': 'aperez1@scu.edu',
-         'HOST': 'azuretestwebserver.database.windows.net',
-         'PORT': '1433',
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+         'NAME': os.environ.get('DATABASE_NAME', ''),
+         'USER': os.environ.get('DATABASE_USER', ''),
+         'PASSWORD': os.environ.get('DATABASE_PASSWORD', ''),
+         'HOST': os.environ.get('DATABASE_HOST', ''),
+         'PORT': os.environ.get('DATABASE_PORT', ''),
          'OPTIONS': {
-             'driver': 'SQL Server Native Client 11.0',
-             'MARS_Connection': 'True',
+             'sslmode': 'require',
          }
      }
  }
