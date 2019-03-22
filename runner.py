@@ -2,6 +2,7 @@ import argparse
 import sys
 import os
 import mechanize # sudo pip3 install mechanize
+import time
 
 # https://stackoverflow.com/questions/1094841/reusable-library-to-get-human-readable-version-of-file-size
 def sizeof_fmt(num, suffix='B'):
@@ -43,6 +44,8 @@ bot = br.open(args.URL)
 print("\nThe url '" + args.URL + "' has been opened in mechanize.Browser().\n\n")
 
 counter = 1
+times = []
+total_time = 0
 while counter <= args.COUNT:
 	br.select_form(nr=0)
 	br['data'] = file_data
@@ -50,10 +53,25 @@ while counter <= args.COUNT:
 	print('\nForm Submission ' + str(counter) + ' of ' + str(args.COUNT) + ':')
 	print('\tSubmitting the form with data from the input file...')
 
+	start = time.time()
 	sign_up = br.submit()
+	elapsed = time.time() - start
 
-	print('\tThe form has been submitted!')
+	print('\tThe form was submitted in ' + str(elapsed) + ' seconds!')
 
 	counter += 1
+	total_time += elapsed
+	times.append(elapsed)
 
+print('\n\n')
+print('The total time taken to submit ' + str(args.COUNT) + ' forms was ' + str(total_time) + ' seconds.')
+
+average = total_time / args.COUNT
+print('\nThe average submission time for 1 form was ' + str(average) + ' seconds.')
+
+differences = 0
+for time in times:
+	differences += pow(time - average, 2)
+stnd_dev = (differences / len(times))**(1/2)
+print('\nThe standard of deviation was ' + str(stnd_dev) + ' seconds.')
 print('\n\n')

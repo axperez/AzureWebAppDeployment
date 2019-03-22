@@ -1,0 +1,4 @@
+This is from the file 'test.txt'.
+The script 'runner.py' should read this.
+It should also be saved in the Django database.
+(this is the second trial)
